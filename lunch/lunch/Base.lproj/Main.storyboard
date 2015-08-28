@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xXi-e9-vHV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--店铺列表-->
+        <scene sceneID="awl-r1-7Jq">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="pageSheet" id="jdi-ap-PDK" customClass="ListController" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m4M-6F-Z3U"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Qn-iN-FLg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ELE-2b-B0v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nJG-VX-aN5">
+                                <rect key="frame" x="5" y="8" width="311" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shopcell" textLabel="Hry-7w-Gee" style="IBUITableViewCellStyleDefault" id="dga-gk-bMB">
+                                        <rect key="frame" x="0.0" y="86" width="311" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="dga-gk-bMB" id="uHr-5G-BfD">
+                                            <rect key="frame" x="0.0" y="0.0" width="278" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" tag="101" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hry-7w-Gee">
+                                                    <rect key="frame" x="15" y="0.0" width="261" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="t9M-9E-IQO" kind="push" identifier="linkmap" id="ekG-D7-wE3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jdi-ap-PDK" id="43R-sz-h4V"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJG-VX-aN5" firstAttribute="top" secondItem="m4M-6F-Z3U" secondAttribute="bottom" constant="-56" id="1C9-BK-yzb"/>
+                            <constraint firstItem="nJG-VX-aN5" firstAttribute="leading" secondItem="ELE-2b-B0v" secondAttribute="leadingMargin" constant="-15" id="Er9-uB-9Yt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nJG-VX-aN5" secondAttribute="trailing" constant="-16" id="cHf-sR-8Ma"/>
+                            <constraint firstItem="5Qn-iN-FLg" firstAttribute="top" secondItem="nJG-VX-aN5" secondAttribute="bottom" constant="8" id="qLB-Hc-CEb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="店铺列表" id="lOJ-hV-N27">
+                        <barButtonItem key="rightBarButtonItem" title="附近地图" id="cXe-uO-q3Z">
+                            <connections>
+                                <segue destination="BeZ-jc-QW3" kind="push" id="qSo-eZ-8Wo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableList" destination="nJG-VX-aN5" id="1FW-Gy-a3c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5Y-p1-cgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="-995"/>
+        </scene>
+        <!--附近地图-->
+        <scene sceneID="GgK-8A-e38">
+            <objects>
+                <viewController id="F9r-rt-ijY" customClass="roundmap" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BdD-zV-soY"/>
+                        <viewControllerLayoutGuide type="bottom" id="03T-KD-gi9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2CC-D9-YHm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="附近地图" id="jAE-g0-haH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6Q-qG-tgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="-343"/>
+        </scene>
+        <!--Today Loc Controller-->
+        <scene sceneID="uqG-sc-UjF">
+            <objects>
+                <viewController id="1ov-Zp-9s9" customClass="todayLocController" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uR4-h1-fx1"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Vk-Iw-eXQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="htQ-nd-9hc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cy-aM-EFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="-314"/>
+        </scene>
+        <!--Shop Location Controller-->
+        <scene sceneID="oos-VU-9Bh">
+            <objects>
+                <viewController id="t9M-9E-IQO" customClass="shopLocationController" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A4f-tW-TN4"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVk-xH-pu4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sg8-W9-WW3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D23-RN-uvt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2q-aT-i1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="-320"/>
+        </scene>
+        <!--中午吃什么-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="vXZ-lx-hvc" customClass="ViewController" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n0f-Qv-cNh"/>
+                        <viewControllerLayoutGuide type="bottom" id="b1X-4y-UMk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psE-lM-9Iq">
+                                <rect key="frame" x="90" y="170" width="141" height="39"/>
+                                <color key="backgroundColor" red="0.358829707" green="0.68550158419999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="随机获取">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getShop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y7l-rC-IAb"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="fan2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6h3-L5-cre">
+                                <rect key="frame" x="10" y="245" width="300" height="310"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="点击获取餐馆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkG-UD-PyX">
+                                <rect key="frame" x="20" y="111" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9z-S3-AcY">
+                                <rect key="frame" x="38" y="115" width="243" height="30"/>
+                                <connections>
+                                    <segue destination="t9M-9E-IQO" kind="push" identifier="linktodaysmap" id="dEN-GE-2sp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b1X-4y-UMk" firstAttribute="top" secondItem="6h3-L5-cre" secondAttribute="bottom" constant="13" id="B19-lY-ad2"/>
+                            <constraint firstItem="psE-lM-9Iq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="70" id="BJJ-dy-ke4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k9z-S3-AcY" secondAttribute="trailing" constant="19" id="CwK-Dq-NeC"/>
+                            <constraint firstItem="k9z-S3-AcY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="18" id="GQX-Fg-TD4"/>
+                            <constraint firstItem="OkG-UD-PyX" firstAttribute="top" secondItem="n0f-Qv-cNh" secondAttribute="bottom" constant="47" id="GaL-sz-lbf"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="OkG-UD-PyX" secondAttribute="leading" id="QlE-kC-nkY"/>
+                            <constraint firstItem="psE-lM-9Iq" firstAttribute="top" secondItem="OkG-UD-PyX" secondAttribute="bottom" constant="14" id="UTG-FC-DGx"/>
+                            <constraint firstItem="psE-lM-9Iq" firstAttribute="top" secondItem="k9z-S3-AcY" secondAttribute="bottom" constant="25" id="cLA-8U-fD7"/>
+                            <constraint firstItem="6h3-L5-cre" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-10" id="lsI-g2-kQa"/>
+                            <constraint firstItem="k9z-S3-AcY" firstAttribute="top" secondItem="n0f-Qv-cNh" secondAttribute="bottom" constant="51" id="n0c-Nb-5Ms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="psE-lM-9Iq" secondAttribute="trailing" constant="69" id="pYe-bS-HrX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6h3-L5-cre" secondAttribute="trailing" constant="-10" id="stY-rD-50O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OkG-UD-PyX" secondAttribute="trailing" id="uNd-1Y-VCs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="中午吃什么" id="p75-Kq-FvH">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="hIX-eu-NgK"/>
+                        <barButtonItem key="leftBarButtonItem" title="list" id="9yD-hO-rVE">
+                            <connections>
+                                <segue destination="jdi-ap-PDK" kind="push" animates="NO" id="0rO-6F-gfz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="18e-1J-nQg">
+                            <connections>
+                                <segue destination="wF4-jl-wln" kind="push" id="qHd-m6-eND"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todayMapBtn" destination="k9z-S3-AcY" id="tub-ZF-0Vs"/>
+                        <outlet property="todayShop" destination="OkG-UD-PyX" id="pta-Ng-Hcu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371" y="-330"/>
+        </scene>
+        <!--新增店铺-->
+        <scene sceneID="6hL-wq-URL">
+            <objects>
+                <viewController id="wF4-jl-wln" customClass="addshopController" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I8f-6w-xSU"/>
+                        <viewControllerLayoutGuide type="bottom" id="eCU-0F-DMM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xmK-bT-tJC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="店铺名称：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kds-rO-3ZU">
+                                <rect key="frame" x="22" y="105" width="85" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OXw-nS-Wkx">
+                                <rect key="frame" x="22" y="153" width="282" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-Lj-GlP">
+                                <rect key="frame" x="88" y="214" width="145" height="41"/>
+                                <color key="backgroundColor" red="0.16657043050000001" green="0.61615934569999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="提 交">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addShop:" destination="wF4-jl-wln" eventType="touchUpInside" id="TpU-EO-MWS"/>
+                                    <segue destination="OqT-XN-5cd" kind="unwind" unwindAction="close:" id="Fbn-0H-m38"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fnl-dX-D9o">
+                                <rect key="frame" x="20" y="305" width="284" height="238"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="fan1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AcI-c7-9iq">
+                                        <rect key="frame" x="4" y="8" width="280" height="230"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AcI-c7-9iq" firstAttribute="leading" secondItem="xmK-bT-tJC" secondAttribute="leadingMargin" constant="4" id="2NX-RA-ao7"/>
+                            <constraint firstItem="eCU-0F-DMM" firstAttribute="top" secondItem="AcI-c7-9iq" secondAttribute="bottom" constant="25" id="E4a-TP-ecH"/>
+                            <constraint firstItem="Z64-Lj-GlP" firstAttribute="leading" secondItem="xmK-bT-tJC" secondAttribute="leadingMargin" constant="68" id="YC8-xD-o4u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OXw-nS-Wkx" secondAttribute="trailing" constant="-4" id="Ymt-NC-Ikg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AcI-c7-9iq" secondAttribute="trailing" constant="-4" id="ixZ-5j-t1u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z64-Lj-GlP" secondAttribute="trailing" constant="67" id="msB-c8-YjX"/>
+                            <constraint firstItem="kds-rO-3ZU" firstAttribute="leading" secondItem="xmK-bT-tJC" secondAttribute="leadingMargin" constant="2" id="nEO-nW-7Yi"/>
+                            <constraint firstItem="OXw-nS-Wkx" firstAttribute="leading" secondItem="xmK-bT-tJC" secondAttribute="leadingMargin" constant="2" id="zje-XV-tAB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="新增店铺" id="M4g-VX-fR7">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="tT6-i0-OUz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="shopName" destination="OXw-nS-Wkx" id="sdA-ad-rdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKY-fP-lpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OqT-XN-5cd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="410"/>
+        </scene>
+        <!--附近地图-->
+        <scene sceneID="Tc5-yQ-Q40">
+            <objects>
+                <viewController id="BeZ-jc-QW3" customClass="baidumap" customModule="lunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K0G-es-0yn"/>
+                        <viewControllerLayoutGuide type="bottom" id="dby-OK-Ae2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1s7-0W-3Xc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="附近地图" id="Vxn-Zq-SOM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMq-O3-kKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="-995"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mwJ-p1-06u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="currentContext" id="xXi-e9-vHV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dgz-Y2-RgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="h9C-y2-FIk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoR-P8-F1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-907" y="-343"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fan1.jpg" width="300" height="265"/>
+        <image name="fan2.png" width="300" height="310"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dEN-GE-2sp"/>
+    </inferredMetricsTieBreakers>
+</document>
